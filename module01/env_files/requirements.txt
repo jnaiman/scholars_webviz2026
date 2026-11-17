@@ -1,0 +1,12 @@
+# pip version of environment.yml, for people who already have Python 3.10+
+# and don't want conda:
+#     python -m pip install -r requirements.txt
+# altair is pinned to 5.x because the online CV (Jekyll) template draws charts
+# with vega-lite 5 (Altair 6 writes vega-lite 6 JSON files).
+altair>=5.5,<6
+vega_datasets
+pandas
+numpy
+matplotlib
+jupyterlab
+streamlit

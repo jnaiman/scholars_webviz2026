@@ -1,0 +1,91 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+# ============================================================================
+# CHANGE THESE EVERY SEMESTER (part 1 of 2)
+#
+# This block is the *only* place the semester's repo name lives.  Everything
+# else (course webpage URL, GitHub URL, links to the walkthrough PDFs) is
+# derived from it:
+#
+#   course webpage : {{ site.url }}{{ site.baseurl }}
+#   course repo    : https://github.com/{{ site.githuburlbase }}{{ site.baseurl }}
+#   Colab links    : https://colab.research.google.com/github/{{ site.githuburlbase }}{{ site.baseurl }}/blob/{{ site.branch }}/<path>
+#
+# In lecture slides, use the COURSE_WEBPAGE / COURSE_GITHUB placeholders
+# instead (Liquid is not rendered inside slide bodies -- see _layouts/lecture.html).
+#
+# The other half of the per-semester settings (dates, people, MediaSpace,
+# related-course links) lives in _data/class.yml.
+#
+# NOTE: _config.yml is NOT reloaded by `jekyll serve` -- restart after editing.
+# ============================================================================
+title: Bolashak Scholars Web Viz Workshop
+email: jnaiman@illinois.edu
+description: >- # this means to ignore newlines until "baseurl:"
+  This is the course website for the Bolashak Scholars Web Viz Workshop:
+  interactive Altair plots on Jekyll pages and Streamlit apps.
+githuburlbase: "jnaiman"                # GitHub user/org that owns the course repo
+baseurl: "/scholars_webviz2026"         # repo name / subpath of the site
+url: "https://jnaiman.github.io"        # hostname & protocol, NO trailing slash
+github_username:  jnaiman
+branch: main
+port: 4010
+
+# Build settings
+markdown: kramdown
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+theme: jekyll-theme-dinky
+plugins:
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+#
+# Setting `exclude` replaces Jekyll 3's default list, so the defaults are
+# repeated here, plus instructor-only notes that should not be published.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - update_table.md
+  - README.md
+  # Starter files people download and put in THEIR OWN sites/repos.  They
+  # contain Jekyll/Liquid code of their own, so this site must not build them;
+  # they are linked from the module pages through GitHub instead.
+  - module03/jekyll_starter
+  - module04/streamlit_starter
+  - "**/.ipynb_checkpoints"
+
+defaults:
+  -
+    scope:
+      path: "lecture*.md"
+    values:
+      layout: "lecture.html"
+  -
+    scope:
+      path: ""
+    values:
+      tags: []

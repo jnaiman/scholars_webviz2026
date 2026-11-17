@@ -1,0 +1,23 @@
+# Conda environment for the Bolashak Scholars Web Viz Workshop.
+#
+# Create it (Mac Terminal / Windows "Anaconda Prompt"):
+#     conda env create -f environment.yml
+# Use it:
+#     conda activate webviz
+#
+# altair is pinned to 5.x on purpose: the online CV (Jekyll) template draws
+# charts with vega-lite 5, and Altair 6 writes vega-lite 6 JSON files.
+name: webviz
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - altair=5.5
+  - vega_datasets
+  - pandas
+  - numpy
+  - matplotlib
+  - jupyterlab
+  - pip
+  - pip:
+      - streamlit

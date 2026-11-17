@@ -1,0 +1,77 @@
+# ============================================================================
+# CHANGE THESE EVERY SEMESTER (part 2 of 2)
+#
+# This file holds who is teaching, when/where the workshop is, and every
+# semester-specific link EXCEPT the course webpage and the GitHub repo -- those
+# two are derived from `baseurl` in _config.yml so the repo name is only ever
+# typed in one place.
+#
+# How to use these values:
+#
+#   * regular pages (index.md, syllabus.md, module*/index.md, _includes, _layouts):
+#     Liquid works, so read them directly --
+#       {{ site.data.class.course.semester }}
+#       {% assign ms = site.data.class.urls | where: "id", "mediaspace" | first %}
+#       {{ ms.url }}
+#     NOTE: Liquid does NOT work inside a page's front matter (e.g. the
+#     `examples:` list in module*/index.md).  To link a file in this repo from
+#     there, use `type: github` with `link:` set to the path inside the repo
+#     (e.g. module03/jekyll_starter) -- the layouts build the full GitHub URL.
+#     Other repo-relative link types the layouts understand:
+#       type: githubtree -> folder view on GitHub
+#       type: githubraw  -> raw file (what "Download raw file" gives you)
+#       type: colab      -> open a notebook from this repo in Google Colab
+#
+#   * lecture slides (module*/lecture*.md):
+#     Liquid does NOT work there (reveal.js gets the raw markdown), so use the
+#     ALL-CAPS placeholders that _layouts/lecture.html substitutes --
+#       COURSE_WEBPAGE  COURSE_GITHUB  COURSE_NAME  COURSE_NUMBER
+#       COURSE_SEMESTER COURSE_MEDIASPACE  COURSE_IS445
+#       COURSE_COLAB     (= Colab URL prefix, append a repo path:
+#                         COURSE_COLAB/module03/altair_to_json.ipynb)
+#       COURSE_RAW       (= raw.githubusercontent.com prefix, append a repo path)
+#       CV_TEMPLATE      (= the online CV template repo URL, see `urls` below)
+#       CV_TEMPLATE_ZIP  (= zip download of that template)
+#       STREAMLIT_TEMPLATE (= Streamlit starter repo URL, see `urls` below)
+#     To add a new placeholder, add one `replace:` line in _layouts/lecture.html.
+# ============================================================================
+
+instructor:
+  name: Jill Naiman
+  email: jnaiman@illinois.edu
+  office: Online
+  office_hours: by appointment
+tas: []
+course:
+  name: Bolashak Scholars Web Viz Workshop
+  number: WebViz 2026
+  semester: Fall 2026
+  location: Room TBD   # TODO Fall 2026: confirm room
+  time: TBD            # TODO Fall 2026: confirm workshop date/time
+  credit_hours: N/A
+
+# Semester links.  `id` is how templates and slide placeholders find an entry.
+# The course webpage and GitHub repo are NOT listed here -- they are derived
+# from _config.yml (url + baseurl + githuburlbase).
+urls:
+  -
+    id: mediaspace
+    name: MediaSpace Channel
+    # TODO Fall 2026: this is the PowerBI workshop's channel -- make a Web Viz channel and paste it here
+    url: https://mediaspace.illinois.edu/channel/Bolashak%2BScholars%2BPowerBI%2BWorkshop%2B2025/394597573
+  -
+    id: is445
+    name: IS445 Online Materials
+    # most recent public IS445 course webpage (Modules 3-5 come from its weeks 8-13)
+    url: https://uiuc-ischool-dataviz.github.io/is445_bcu_fall2026/
+  -
+    id: cv_template
+    name: Online CV (Jekyll) Template
+    # the Jekyll template participants put on their github.io site (Modules 1 & 3)
+    url: https://github.com/jnaiman/online_cv_public_fa2026
+  -
+    id: streamlit_template
+    name: Streamlit Starter Repo
+    # repo participants fork for their first Streamlit app (Modules 1 & 4).
+    # TODO: swap for a workshop-specific repo if you make one (see update_table.md)
+    url: https://github.com/jnaiman/is445_streamlit_demo

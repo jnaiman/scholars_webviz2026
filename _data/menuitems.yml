@@ -1,0 +1,5 @@
+- name: Syllabus
+  url: /syllabus
+  faicon: fa-book
+  weight: 10
+
