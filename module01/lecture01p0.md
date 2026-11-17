@@ -131,7 +131,7 @@ windows folks -- Anaconda Prompt, not Command Prompt!
 3. Create the `webviz` environment:
 
 ```bash
-conda create -n webviz -c conda-forge python=3.12 altair=5.5 vega_datasets pandas numpy matplotlib jupyterlab pip ; conda activate webviz ; pip install streamlit
+conda create -n webviz -c conda-forge python=3.12 altair=6 vega_datasets pandas numpy matplotlib jupyterlab pip ; conda activate webviz ; pip install streamlit
 ```
 
 (or use the [environment.yml](COURSE_GITHUB/raw/main/module01/env_files/environment.yml) file: `conda env create -f environment.yml`)
@@ -139,7 +139,7 @@ conda create -n webviz -c conda-forge python=3.12 altair=5.5 vega_datasets panda
 notes:
 this one takes a few minutes -- start it now while we talk
 
-why altair 5.5? the website template draws plots with vega-lite 5, altair 6 writes vega-lite 6 files
+we use altair 6 -- if you already have altair 5 from another class, the test notebook will tell you how to upgrade
 
 ---
 

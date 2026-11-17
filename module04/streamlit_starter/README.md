@@ -29,4 +29,4 @@ Open http://localhost:8501, edit the file, save, and click **Rerun** in the app.
 
 ## Adding packages
 
-Every package you `import` must be listed in `requirements.txt` (one per line), or the online app will fail with `ModuleNotFoundError`. Altair is kept at version 5 to match the Jekyll template from Module 3.
+Every package you `import` must be listed in `requirements.txt` (one per line), or the online app will fail with `ModuleNotFoundError`.

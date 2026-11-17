@@ -47,18 +47,18 @@ except ImportError:
         print("streamlit: NOT FOUND -- did you run `conda activate webviz` before `jupyter lab`?")"""),
 md("""### Altair version check
 
-The Jekyll template we use draws plots with **vega-lite version 5**, which matches **Altair 5**.
-Altair 6 saves vega-lite **6** files, and some of them won't draw correctly on the template.
+This workshop uses **Altair 6**, which saves plots as **vega-lite version 6** files.
+Older Altair versions mostly work too, but some examples may look different.
 This cell tells you which one you have."""),
 code("""major = int(alt.__version__.split(".")[0])
-if major == 5:
-    print("Altair 5 -- perfect, this matches the Jekyll template.")
+if major >= 6:
+    print(f"Altair {alt.__version__} -- perfect!")
 else:
-    print(f"You have Altair {alt.__version__}.  Please install Altair 5:")
+    print(f"You have Altair {alt.__version__}.  Please upgrade to Altair 6:")
     if IN_COLAB:
-        print('   run   %pip install "altair<6"   in a new cell, then Runtime -> Restart session, and run this notebook again')
+        print('   run   %pip install -U "altair>=6"   in a new cell, then Runtime -> Restart session, and run this notebook again')
     else:
-        print('   run   conda install -c conda-forge altair=5.5   in your Terminal/Anaconda Prompt and restart this notebook')"""),
+        print('   run   conda install -c conda-forge altair=6   in your Terminal/Anaconda Prompt and restart this notebook')"""),
 md("""## 2. Read a dataset from the web
 
 We'll use the **mobility** dataset from the IS445 course.  "Mobility" here measures how easy it is for

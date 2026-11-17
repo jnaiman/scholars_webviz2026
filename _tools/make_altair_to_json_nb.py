@@ -32,7 +32,7 @@ code("""import os
 import pandas as pd
 import altair as alt
 
-print("altair", alt.__version__)   # should be 5.x -- see the Module 1 test notebook if not
+print("altair", alt.__version__)   # should be 6.x -- see the Module 1 test notebook if not
 
 # Every JSON file we make goes in this folder
 OUT = "my_json_files"

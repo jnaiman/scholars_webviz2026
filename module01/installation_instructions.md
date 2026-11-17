@@ -84,14 +84,14 @@ conda activate webviz
 Or, without the file, all in one line:
 
 ```bash
-conda create -n webviz -c conda-forge python=3.12 altair=5.5 vega_datasets pandas numpy matplotlib jupyterlab pip ; conda activate webviz ; pip install streamlit
+conda create -n webviz -c conda-forge python=3.12 altair=6 vega_datasets pandas numpy matplotlib jupyterlab pip ; conda activate webviz ; pip install streamlit
 ```
 
 **Every time** you open a new Terminal/Anaconda Prompt for this workshop, run `conda activate webviz` first. Your prompt will start with `(webviz)`.
 
 > Already have Python 3.10+ and prefer pip? `python -m pip install -r requirements.txt` with this [requirements.txt]({{ repo }}/raw/{{ site.branch }}/module01/env_files/requirements.txt) works too.
 
-> **Why Altair 5.5 and not 6?** The Jekyll template draws plots with vega-lite version 5. Altair 6 writes vega-lite 6 files. Pinning Altair 5.5 keeps the two in step.
+> **Which Altair?** This workshop uses **Altair 6** (it saves plots as vega-lite version 6 files). If you already have Altair 5 installed, `conda install -c conda-forge altair=6` upgrades it.
 
 ### 2A.3 Test it
 

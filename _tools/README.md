@@ -28,12 +28,12 @@ cp /tmp/nb/my_json_files/mobility_scatter.html module03/any_site_starter/standal
 cp /tmp/nb/my_json_files/corgis_over_time.json module04/streamlit_starter/
 ```
 
-Use **Altair 5.x**. The online CV template bundles vega-lite 5.20, so the JSONs should declare a v5 schema.
+Use **Altair 6.x** (the JSONs declare a vega-lite v6 schema). The online CV template bundles an older vega-lite 5 library; it draws these v6 files fine (tested), but logs a version warning in the browser console.
 
 The project-card image `module03/jekyll_starter/my_assets/pngs/altair_workshop_card.png` was rendered from `mobility_scatter.json` with [vl-convert](https://github.com/vega/vl-convert) (`pip install vl-convert-python`):
 
 ```python
 import json, vl_convert as vlc
 spec = json.load(open("mobility_scatter.json")); spec["width"] = 560; spec["height"] = 330
-open("altair_workshop_card.png", "wb").write(vlc.vegalite_to_png(json.dumps(spec), vl_version="5.20", scale=1.5))
+open("altair_workshop_card.png", "wb").write(vlc.vegalite_to_png(json.dumps(spec), vl_version="6.4", scale=1.5))
 ```

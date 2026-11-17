@@ -228,7 +228,7 @@ Plot not showing?
 2. JSON file name/folder exactly right? (capital letters matter!)
 3. `{{ site.baseurl }}` at the start of `schema-url`?
 4. Did the build finish? (Actions tab green)
-5. Altair 6? → re-save with Altair 5 (see the Module 1 test notebook)
+5. Still blank? Open the browser console (right click → Inspect → Console) and look for red errors
 
 notes:
 also try the browser's developer console (right click → Inspect → Console) -- a red "404" means the JSON path is wrong

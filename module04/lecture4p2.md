@@ -42,7 +42,7 @@ requirements.txt      <- one package per line
 
 ```
 streamlit
-altair>=5.5,<6
+altair>=6,<7
 pandas
 ```
 
