@@ -34,6 +34,10 @@
 #       CV_TEMPLATE_ZIP  (= zip download of that template)
 #       STREAMLIT_TEMPLATE (= Streamlit starter repo URL, see `urls` below)
 #     To add a new placeholder, add one `replace:` line in _layouts/lecture.html.
+#     CAREFUL: Jekyll still *parses* slide bodies as Liquid even though it
+#     shows them raw, so `{{ ... }}` in a slide is fine but a `{%` tag
+#     (e.g. an `include` shown as example code) breaks the build or runs.
+#     Show plain HTML instead, or link to a file in the repo.
 # ============================================================================
 
 instructor:
