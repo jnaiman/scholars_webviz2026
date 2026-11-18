@@ -21,6 +21,9 @@ gem "github-pages", group: :jekyll_plugins
 
 gem "webrick", "~> 1.8.2"
 
+# Ruby 3.4+ no longer ships csv as a default gem, but Jekyll 3.9 requires it
+gem "csv"
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
