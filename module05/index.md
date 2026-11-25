@@ -9,6 +9,8 @@ notitle: true
 
 Connect your Streamlit app and your github.io site (a button, an embedded app, or a project card), then some resources for going further. See [Lecture 5.1](lecture5p1.html) for the code snippets.
 
+Didn't get to the Streamlit app? [Module 4]({{site.baseurl}}/module04/) is self-contained, so you can do it later on your own. And to work on your site and app on your own computer, see [Module 6]({{site.baseurl}}/module06/).
+
 To **embed your app** in a project page, add this to the page's `.md` file (`?embed=true` hides Streamlit's menus):
 
 ```html

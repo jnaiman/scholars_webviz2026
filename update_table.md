@@ -8,17 +8,17 @@ Items that need a decision, a login, or a check in a live account. (This file is
 |---|---|---|---|---|
 | 1 | `_data/class.yml` → `course.time`, `course.location` | Date/time and room are `TBD`. | Fill in. |  |
 | 2 | `_data/class.yml` → `urls` → `mediaspace` | Still points at the **PowerBI** workshop's MediaSpace channel (linked from the syllabus info box and Lecture 5.1). | Make a Web Viz channel and paste its URL, or remove the entry. |  |
-| 3 | `_data/class.yml` → `urls` → `streamlit_template` | Participants fork `jnaiman/is445_streamlit_demo` in Module 1. Its app text says "IS445" and shows that repo's URLs. | Optional: make a workshop repo (e.g. `scholars_webviz_streamlit`) and change this one URL. Uploading `module04/streamlit_starter` there would also work. |  |
-| 4 | Workshop length | Modules are sized like the PowerBI workshop, but Module 1 setup (especially Ruby/Jekyll) can take a long time in the room. | Strongly encourage pre-workshop setup, or steer people with trouble to Track B (browser only). |  |
-| 5 | Module structure | Module 3 = Altair + Jekyll, Module 4 = Streamlit, Module 5 = linking the two + "where to go from here". | Change if you wanted three hands-on modules (e.g. split Altair and Jekyll). |  |
+| 3 | `_data/class.yml` → `urls` → `streamlit_template` | Participants fork `jnaiman/is445_streamlit_demo` in Lecture 4.1. Its app text says "IS445" and shows that repo's URLs. | Optional: make a workshop repo (e.g. `scholars_webviz_streamlit`) and change this one URL. Uploading `module04/streamlit_starter` there would also work. |  |
+| 4 | Workshop length | The workshop is browser only now, so Module 1 setup is accounts + Colab + uploading the template. Modules 1-3 (website) and Module 4 (Streamlit) are separate tools, so Module 4 can be dropped if time runs short. | Decide in advance where to cut if needed. |  |
+| 5 | Module structure | 1 = setup (browser only), 2 = viz basics, 3 = Altair + Jekyll, 4 = Streamlit (self-contained, incl. account + first deploy), 5 = linking the two + "where to go from here", 6 = optional local installs. | Done. |  |
 
 ## Check by hand in live accounts
 
 | # | Where | Description | Status |
 |---|---|---|---|
-| 6 | Lecture 1.2, Module 4 slides | Streamlit Cloud UI wording ("Create app", "Deploy a public app from GitHub", "Manage app", Settings → Sharing) is from the Fall 2026 IS445 lab screenshots. Click through once. |  |
-| 7 | Lecture 1.2 screenshots (`module01/images/jekyll_setup`, `streamlit_setup`) | Reused from the PrairieLearn labs. They show IS445 names (`is445_demo`, "IS445 Jekyll Template"), and `jekyllWorking2025_line.png` shows your bookmarks bar. | Optional: retake. |  |
-| 8 | Install page, Step 3 | Ruby advice is "3.3 or 3.4" (the template README says Ruby 4.0 also works; the PrairieLearn lab says avoid 4.0). Confirm which you want to recommend. |  |
+| 6 | Module 4 slides (esp. Lecture 4.1) | Streamlit Cloud UI wording ("Create app", "Deploy a public app from GitHub", "Manage app", Settings → Sharing) is from the Fall 2026 IS445 lab screenshots. Click through once. |  |
+| 7 | Screenshots (`module01/images/jekyll_setup`, `module04/images/streamlit_setup`, `module06/images`) | Reused from the PrairieLearn labs. They show IS445 names (`is445_demo`, "IS445 Jekyll Template"), and `jekyllWorking2025_line.png` shows your bookmarks bar. | Optional: retake. |  |
+| 8 | Module 6 install page, Step 3 | Ruby advice is "3.3 or 3.4" (the template README says Ruby 4.0 also works; the PrairieLearn lab says avoid 4.0). Confirm which you want to recommend. |  |
 | 9 | Colab | Colab's current Altair version wasn't checked. If Colab still ships Altair 5, the test notebook prints the upgrade command (`%pip install -U "altair>=6"`). The Module 3 notebook's code also runs on Altair 5, but its JSONs would then be vega-lite 5. Run both notebooks in Colab once. |  |
 | 10 | Whole site after the first push | Open each module page, each slide deck, the notebook viewer links, the Colab links and `module03/any_site_starter/plot_page.html` on the live site. |  |
 

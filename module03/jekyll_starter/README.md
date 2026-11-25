@@ -29,7 +29,7 @@ The `.json` files are exactly what [`module03/altair_to_json.ipynb`](../altair_t
 
 ## Option 2: copy locally and push
 
-Copy the files into the matching folders of your local clone, check them with `bundle exec jekyll serve` (open http://localhost:4008/projects/), then:
+If you installed Jekyll and git on your computer ([Module 6](https://jnaiman.github.io/scholars_webviz2026/module06/) of the workshop), copy the files into the matching folders of your local clone, check them with `bundle exec jekyll serve` (open http://localhost:4008/projects/), then:
 
 ```bash
 git add -A

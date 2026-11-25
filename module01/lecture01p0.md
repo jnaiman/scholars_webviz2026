@@ -1,16 +1,17 @@
 ---
-title: Lecture 1.0 - Setup Part 1, Installing Our Tools
+title: Lecture 1.0 - Setup Part 1, Accounts & Google Colab
 layout: lecture
 tags:
-  - installations
   - setup
+  - accounts
+  - colab
 description: >-
-  Pre-workshop: accounts to make and software to install (or the browser-only option).
+  Pre-workshop: make your free accounts and test Google Colab. Nothing to install!
 date: 2026-12-01
 ---
 
 <br/><br/><br/>
-# Setup Part 1: Installing Our Tools
+# Setup Part 1: Accounts & Google Colab
 
 notes:
 raise of hands -- who has used Python before? GitHub? Who has a website?
@@ -23,232 +24,105 @@ this is the "pre-workshop" setup -- ideally done before we start, but we'll walk
 
 By the end of this workshop you'll have:
 
-1. A **personal website** at `https://<your-username>.github.io` with **interactive plots** on it
-2. A **web app** at `https://<your-app>.streamlit.app` that anyone can use
+1. A **personal website** at `https://<your-username>.github.io` with **interactive plots** on it (Modules 1-3)
+2. A **web app** at `https://<your-app>.streamlit.app` that anyone can use (Module 4)
 
 Both are **free** to host.
 
 notes:
-two "products" -- a website (Jekyll + Altair, Module 3) and an app (Streamlit, Module 4)
+two "products" -- a website (Jekyll + Altair) and an app (Streamlit)
+
+each one is self-contained: we finish the website completely before starting on the app
 
 ---
 
-## The tools
+## Everything happens in your browser
 
 | Tool | What it does | Module |
 |---|---|---|
-| **Python** + [Altair](https://altair-viz.github.io/) | Makes interactive plots | 3, 4 |
 | [GitHub](https://github.com/) | Stores your files, hosts your website | 1, 3, 4 |
-| [Jekyll](https://jekyllrb.com/) | Turns Markdown files into a website | 3 |
-| [Streamlit](https://streamlit.io/) | Turns a Python script into a web app | 4 |
-| [Streamlit Community Cloud](https://share.streamlit.io/) | Hosts your Streamlit app | 4 |
+| [Google Colab](https://colab.research.google.com/) | Runs Python + [Altair](https://altair-viz.github.io/) to make interactive plots | 1, 3 |
+| [Jekyll](https://jekyllrb.com/) | Turns Markdown files into a website (GitHub runs it for you) | 1, 3 |
+| [Streamlit Community Cloud](https://share.streamlit.io/) | Runs your Streamlit app | 4 |
+
+**Nothing to install!**
 
 notes:
 don't worry about memorizing this -- we'll meet each of these as we go
 
----
-
-## Two ways to do this workshop
-
-| | **Track A: install on my computer** | **Track B: browser only** |
-|---|---|---|
-| Python | JupyterLab (Miniconda) | [Google Colab](https://colab.research.google.com/) |
-| Website | Preview locally, then `git push` | Upload files on github.com |
-| App | `streamlit run` locally, then `git push` | Edit files on github.com |
-| Install | Miniconda, git, Ruby + Jekyll | Nothing! |
-
-You can mix and match!
-
-notes:
-track A is faster once it's set up (you see changes instantly on your own computer) and is what you'd want if you keep building things after the workshop
-
-track B works on any computer with a browser -- good for locked-down work laptops, or if installs are being difficult today
-
-**everything we do today works in both tracks**
+want to install everything on your own computer later? Module 6 walks through it -- but you don't need it today
 
 ---
 
 ## Full instructions
 
-Everything on these slides (plus troubleshooting) is on the [Installation & Setup Instructions page](COURSE_WEBPAGE/module01/installation_instructions.html).
+Everything on these slides (plus troubleshooting) is on the [Setup Instructions page](COURSE_WEBPAGE/module01/setup_instructions.html).
 
 notes:
 **open this page and show the contents list and the Troubleshooting section at the bottom**
 
 ---
 
-## Step 1: Accounts (everyone)
+## Step 1: A GitHub account
 
-1. **GitHub**: [github.com/signup](https://github.com/signup)
-   * your username becomes your website: `<username>.github.io`
+[github.com/signup](https://github.com/signup)
+
+Your username becomes your website: **`<username>.github.io`**
 
 notes:
 pick a username you'd be ok putting on a CV!
 
+already have one? great, use it
+
 ---
 
-## Step 1: Accounts (everyone)
+## Step 2: A Google account for Colab
 
-1. **GitHub**: [github.com/signup](https://github.com/signup)
-   * your username becomes your website: `<username>.github.io`
-2. **Streamlit Community Cloud**: [share.streamlit.io](https://share.streamlit.io/) → "Continue with GitHub"
+Any Google account works for [Google Colab](https://colab.research.google.com/) -- Google's free online Jupyter notebooks.
 
-<img src="images/streamlit_setup/continue_with_github.png" width="35%" style="border: 1px solid black;" alt="The Streamlit sign-in page with a 'Continue with GitHub' button.">
+Altair and pandas are already installed there.
 
 notes:
-streamlit cloud reads your GitHub repositories to build apps, so we link the two accounts
+some university Google accounts have Colab turned off -- a personal gmail account always works
 
 ---
 
-## Step 1: Accounts (everyone)
-
-1. **GitHub**: [github.com/signup](https://github.com/signup)
-   * your username becomes your website: `<username>.github.io`
-2. **Streamlit Community Cloud**: [share.streamlit.io](https://share.streamlit.io/) → "Continue with GitHub"
-3. **Track B only**: a Google account for [Google Colab](https://colab.research.google.com/)
-
-notes:
-colab is Google's free online Jupyter notebook -- altair and pandas are already installed there
-
----
-
-## Step 2 (Track A): Python with Miniconda
-
-1. Install **Miniconda**: [anaconda.com/download/success](https://www.anaconda.com/download/success) (scroll to "Miniconda Installers")
-2. Open **Terminal** (Mac) or **Anaconda Prompt** (Windows)
-
-notes:
-conda keeps the packages for this workshop in their own "environment" so they don't mess with anything else on your computer
-
-windows folks -- Anaconda Prompt, not Command Prompt!
-
----
-
-## Step 2 (Track A): Python with Miniconda
-
-1. Install **Miniconda**: [anaconda.com/download/success](https://www.anaconda.com/download/success) (scroll to "Miniconda Installers")
-2. Open **Terminal** (Mac) or **Anaconda Prompt** (Windows)
-3. Create the `webviz` environment:
-
-```bash
-conda create -n webviz -c conda-forge python=3.12 altair=6 vega_datasets pandas numpy matplotlib jupyterlab pip ; conda activate webviz ; pip install streamlit
-```
-
-(or use the [environment.yml](COURSE_GITHUB/raw/main/module01/env_files/environment.yml) file: `conda env create -f environment.yml`)
-
-notes:
-this one takes a few minutes -- start it now while we talk
-
-we use altair 6 -- if you already have altair 5 from another class, the test notebook will tell you how to upgrade
-
----
-
-## Step 2 (Track A): Python with Miniconda
-
-1. Install **Miniconda**: [anaconda.com/download/success](https://www.anaconda.com/download/success) (scroll to "Miniconda Installers")
-2. Open **Terminal** (Mac) or **Anaconda Prompt** (Windows)
-3. Create the `webviz` environment (see above)
-4. **Every time** you open a new Terminal: `conda activate webviz`
-
-Your prompt should start with `(webviz)`.
-
-notes:
-this is the #1 thing people forget!  if something says "module not found" -- check for (webviz)
-
----
-
-## Step 2 (Track B): Google Colab
+## Step 3: Test it
 
 Open the [test notebook in Colab](COURSE_COLAB/module01/test_install.ipynb) → **Runtime → Run all**
 
-notes:
-if colab warns "this notebook was not authored by Google" -- click "Run anyway"
-
-colab files disappear when you close it -- use File → Save a copy in Drive, and download any files you make
-
----
-
-## Step 2: Test it (everyone)
-
-The [test notebook](COURSE_WEBPAGE/nbv.html?notebook_name=COURSE_WEBPAGE/module01/test_install.ipynb):
+It:
 * imports `pandas` and `altair`
 * reads a dataset from the web
 * makes an interactive plot
 * saves it as `my_first_chart.json`
 
-**Track A:** download it, run `jupyter lab`, open it, Run All.
-
-**Track B:** [open it in Colab](COURSE_COLAB/module01/test_install.ipynb), Runtime → Run all.
-
 notes:
+if colab warns "this notebook was not authored by Google" -- click "Run anyway"
+
 if you see a plot at the end you're good to go!
 
-we'll use that json file in Module 3 -- it's how plots get onto websites
+we'll use that json file idea in Module 3 -- it's how plots get onto websites
 
 ---
 
-## Step 3 (Track A): git
+## Colab tips
 
-* **Mac:** `xcode-select --install`
-* **Windows:** [Git for Windows](https://git-scm.com/downloads/win)
-
-Then tell git who you are:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
-```
+* Files you make **disappear** when you close Colab → download them (📁 folder icon on the left → right click → Download)
+* Want to keep your notebook? **File → Save a copy in Drive**
 
 notes:
-git is how we send files from our computer to GitHub
-
-when you push the first time you'll be asked to log in -- Windows opens a browser; Mac asks for a "password", which needs to be a personal access token (see install page)
+we'll make a handful of .json files in Module 3 -- the Module 3 notebook has a cell that zips them all up and downloads them for you
 
 ---
 
-## Step 3 (Track A): Ruby & Jekyll
+## (Optional) Step 4: A Streamlit account
 
-Follow the official guide for your system **all the way to the end**:
+[share.streamlit.io](https://share.streamlit.io/) → "Continue with GitHub"
 
-* [Mac](https://jekyllrb.com/docs/installation/macos/)
-* [Windows](https://jekyllrb.com/docs/installation/windows/) (use **Ruby+Devkit 3.4.x**, not 4.0)
-* [Ubuntu](https://jekyllrb.com/docs/installation/ubuntu/) / [Other Linux](https://jekyllrb.com/docs/installation/other-linux/)
-
-Then: `gem install jekyll bundler`
+We'll do this together at the start of **Module 4**, but you can do it now too.
 
 notes:
-this is the step most likely to give trouble, so start early!
+streamlit cloud reads your GitHub repositories to build apps, so we link the two accounts
 
-Mac: after brew and chruby install they print "next steps" -- you must run those lines and re-open Terminal
-
-check with `ruby -v` (should be 3.3 or 3.4, NOT 2.6 which is the Mac's built-in one)
-
----
-
-## Step 3 (Track A): Ruby & Jekyll
-
-Follow the official guide for your system **all the way to the end**:
-
-* [Mac](https://jekyllrb.com/docs/installation/macos/)
-* [Windows](https://jekyllrb.com/docs/installation/windows/) (use **Ruby+Devkit 3.4.x**, not 4.0)
-* [Ubuntu](https://jekyllrb.com/docs/installation/ubuntu/) / [Other Linux](https://jekyllrb.com/docs/installation/other-linux/)
-
-Then: `gem install jekyll bundler`
-
-Stuck? Check the [Troubleshooting section](COURSE_WEBPAGE/module01/installation_instructions.html#troubleshooting), or switch to Track B for the website for today!
-
-notes:
-no shame in switching tracks -- you can always install later and pick up where you left off, since your site lives on GitHub either way
-
----
-
-## Optional: VS Code
-
-[VS Code](https://code.visualstudio.com/download) -- a free editor with files, a Terminal and Markdown preview in one window.
-
-Any text editor works though!
-
-notes:
-we'll set up the website and app themselves in Lecture 1.2, after a bit of an intro
-
-**walk around and help with installs**
+we'll set up the website itself in Lecture 1.2, after a bit of an intro

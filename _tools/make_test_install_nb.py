@@ -11,20 +11,21 @@ cells = [
 md(f"""# Test your setup -- Bolashak Scholars Web Viz Workshop, Module 1
 
 This notebook checks that you can:
-1. import the Python packages we use (`pandas`, `altair`, and -- if you installed locally -- `streamlit`),
+1. import the Python packages we use (`pandas`, `altair`, and -- if you installed locally in Module 6 -- `streamlit`),
 2. read a dataset from the web,
 3. make an interactive Altair plot, and
 4. save that plot as a `.json` file (this is what we'll put on our websites in Module 3).
 
 **How to run it:** run each cell in order with `Shift+Enter`, or use "Run All".
 
-* **Track A (local):** open it with `jupyter lab` from a Terminal/Anaconda Prompt where you ran `conda activate webviz`.
-* **Track B (browser only):** [open it in Google Colab](https://colab.research.google.com/github/{REPO}/blob/main/module01/test_install.ipynb) and use **Runtime → Run all**.
+* **In the workshop:** [open it in Google Colab](https://colab.research.google.com/github/{REPO}/blob/main/module01/test_install.ipynb) and use **Runtime → Run all**.
+* **On your own computer (optional, Module 6):** open it with `jupyter lab` from a Terminal/Anaconda Prompt where you ran `conda activate webviz`.
 """),
 md("""## 1. Check the packages
 
 You should see version numbers and no red error messages.  If something is missing, see the
-"Troubleshooting" section of the workshop's Installation & Setup Instructions page."""),
+"Troubleshooting" section of the workshop's Setup Instructions page (Module 1), or of the
+Installing Everything Locally page (Module 6) if you're running this on your own computer."""),
 code("""import sys
 print("Python version:", sys.version.split()[0])
 
@@ -107,7 +108,7 @@ If every cell ran and you saw the plot, your Python setup is ready.
 
 Keep `my_first_chart.json` -- in **Module 3** we'll upload a file just like it to your github.io site.
 
-**Optional (Track A):** to check Streamlit, run `streamlit hello` in your Terminal/Anaconda Prompt.
+**Optional (installed locally, Module 6):** to check Streamlit, run `streamlit hello` in your Terminal/Anaconda Prompt.
 A demo app should open in your browser; stop it with `CTRL+C`."""),
 ]
 

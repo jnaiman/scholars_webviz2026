@@ -6,12 +6,12 @@ notitle: true
 examples:
   - filename: altair_to_json.ipynb
     type: ipynb
-    title: Module 3 notebook -- Altair plots to JSON files
+    title: Module 3 notebook (view on this site)
     description: Make four interactive plots and save them as vega-lite JSON files for your website.
   - filename: colab_altair
     type: colab
     title: Module 3 notebook (open in Google Colab)
-    description: The same notebook, for the browser-only track.
+    description: The same notebook, ready to run in your browser.
     link: module03/altair_to_json.ipynb
   - filename: jekyll_starter
     type: githubtree
@@ -44,10 +44,7 @@ data:
 
 In this module we make interactive plots in Python with [Altair](https://altair-viz.github.io/), save them as [vega-lite](https://vega.github.io/vega-lite/) `.json` files, and show them on a project page of the github.io site we set up in Module 1.
 
-**Two ways to get the plots onto your site** (both work with the ready-made files in the [Jekyll starter folder](https://github.com/{{site.githuburlbase}}{{site.baseurl}}/tree/{{site.branch}}/module03/jekyll_starter)):
-
-* **Browser only:** upload the `.json` files to `my_assets/json/` and the project page to `projects/` with **Add file → Upload files** on github.com.
-* **Locally:** copy them into your clone, preview with `bundle exec jekyll serve`, then `git push`.
+To get the plots onto your site, upload the `.json` files to `my_assets/json/` and the project page to `projects/` with **Add file → Upload files** on github.com. Your own JSONs from the notebook work, and so do the ready-made files in the [Jekyll starter folder](https://github.com/{{site.githuburlbase}}{{site.baseurl}}/tree/{{site.branch}}/module03/jekyll_starter).
 
 Each plot is one line on a project page (and the page needs the `custom_js` lines in its front matter -- see [Lecture 3.2](lecture3p2.html)):
 
@@ -56,6 +53,8 @@ Each plot is one line on a project page (and the page needs the `custom_js` line
 ```
 
 Not using the template? The same `.json` files work on any web page -- see the [plain HTML example](any_site_starter/plot_page.html).
+
+Prefer to preview your site on your own computer before uploading? See [Module 6]({{site.baseurl}}/module06/) (optional).
 
 ### Optional Reading and Materials
 

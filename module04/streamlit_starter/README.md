@@ -18,7 +18,9 @@ A small Streamlit app with sidebar widgets, Altair plots (including a selection 
 
 To change the app, edit `streamlit_app.py` on GitHub (✏️) and commit -- the app rebuilds by itself.
 
-## Run it on your computer
+## Run it on your computer (optional)
+
+If you installed Python and git on your computer ([Module 6](https://jnaiman.github.io/scholars_webviz2026/module06/) of the workshop):
 
 ```bash
 conda activate webviz            # or any Python with: pip install -r requirements.txt

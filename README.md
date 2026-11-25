@@ -6,11 +6,14 @@ Source for the workshop website (Jekyll + GitHub Pages): interactive Altair plot
 
 | Module | Topic | Main files |
 |---|---|---|
-| 1 | Introduction & Setup (two tracks: install locally, or browser only) | `module01/installation_instructions.md`, `lecture01p0-2.md`, `test_install.ipynb`, `env_files/` |
+| 1 | Introduction & Setup (browser only: GitHub, Colab, github.io site) | `module01/setup_instructions.md`, `lecture01p0-2.md`, `test_install.ipynb` |
 | 2 | Data Viz Basics (unchanged from the PowerBI workshop) | `module02/lecture2p1.md` |
 | 3 | Altair plots → JSON → Jekyll site | `module03/lecture3p1-2.md`, `altair_to_json.ipynb`, `jekyll_starter/`, `any_site_starter/` |
-| 4 | Streamlit apps on Streamlit Community Cloud | `module04/lecture4p1-2.md`, `streamlit_starter/` |
+| 4 | Streamlit apps on Streamlit Community Cloud (self-contained: account + first deploy in 4.1) | `module04/lecture4p1-3.md`, `streamlit_starter/` |
 | 5 | Putting it together & where to go from here | `module05/lecture5p1.md` |
+| 6 | *(Optional)* Installing everything locally: Miniconda, git, Ruby/Jekyll, local workflows | `module06/installation_instructions.md`, `lecture6p1-2.md`, `env_files/` |
+
+The workshop itself is **browser only** (Colab + github.com + Streamlit Cloud). Modules 1-3 make one complete tool (a Jekyll site with Altair plots) and Module 4 a second, self-contained one (a Streamlit app), so the workshop can stop after Module 3 if time runs short. Local installs live only in Module 6.
 
 **Starter folders** (`module03/jekyll_starter`, `module04/streamlit_starter`) are files participants copy into *their own* sites/repos. They are excluded from this site's Jekyll build (see `exclude` in `_config.yml`) and linked through GitHub instead. `module03/any_site_starter` *is* built, so its plain-HTML demo page is live on the workshop site.
 

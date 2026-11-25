@@ -1,185 +1,145 @@
 ---
-title: Lecture 4.1 - Building Apps with Streamlit
+title: Lecture 4.1 - Your First Streamlit App
 layout: lecture
 tags:
   - streamlit
-  - altair
-  - python
+  - github
+  - setup
   - hands-on
 description: >-
-  How Streamlit turns a Python script into a web app: text, widgets, Altair plots and layout.
-date: 2026-12-08
+  Make a Streamlit Community Cloud account and deploy a first app from GitHub, all in the browser.
+date: 2026-12-07
 ---
 
 <br/><br/><br/>
-# Building Apps with Streamlit
+# Your First Streamlit App
 
 notes:
-module 3: plots on a static website.  module 4: an "app" where Python actually runs when people use it
+modules 1-3 gave us a finished website.  now a second, separate tool: an "app" where Python runs when people use it
+
+everything we need for this module is set up right here -- all you need is your GitHub account
 
 ---
 
-## Jekyll site vs. Streamlit app
+## Where we are going
 
-| | Jekyll + Altair JSON | Streamlit app |
-|---|---|---|
-| What runs when someone visits? | Nothing -- just files | Your Python script |
-| Interactivity | What vega-lite can do in the browser | Anything Python can do |
-| Hosting | GitHub Pages | Streamlit Community Cloud |
-| Speed | Instant | Can "go to sleep", takes a moment to wake |
-| Good for | Portfolios, write-ups, a few plots | Dashboards, data tools, filtering big data |
+A **web app** at `https://<your-app>.streamlit.app` that anyone can use:
+
+* [Streamlit](https://streamlit.io/) turns a Python script into a web app
+* [Streamlit Community Cloud](https://share.streamlit.io/) runs it for free
 
 notes:
-neither is "better" -- they're good at different things, and you can link them together (Module 5)
-
-free streamlit apps go to sleep if nobody visits for a while -- the first visitor clicks a button to wake it up
+today: get a first app online (this lecture), learn how to build one (4.2), then put our own app online (4.3)
 
 ---
 
-## Streamlit
+## An app is two files
 
-[Streamlit](https://streamlit.io/) turns a Python script into a web app:
+In a **public GitHub repository**:
 
-<img src="images/streamlit1.png" width="75%" style="border: 1px solid black;" alt="Streamlit's 'hello world' example: a few lines of Python with st.write and Markdown strings on the left, and the resulting web page with a header and text on the right.">
+* `streamlit_app.py` -- your Python code
+* `requirements.txt` -- the packages to install (`streamlit`, `altair`, ...)
 
 notes:
-each st.something call adds a piece to the page, top to bottom
+streamlit community cloud reads these from github and runs the app for you
 
 ---
 
-## The big idea
+## 1. Make a Streamlit account
 
-**Streamlit re-runs your whole script, top to bottom, every time a viewer touches a widget.**
+[share.streamlit.io](https://share.streamlit.io/) → **"Continue with GitHub"**
 
-```python
-import streamlit as st
-
-name = st.text_input("Your name")
-st.write("Hello", name)
-```
+<img src="images/streamlit_setup/continue_with_github.png" width="35%" style="border: 1px solid black;" alt="The Streamlit sign-in page with a 'Continue with GitHub' button.">
 
 notes:
-no callbacks or event handlers to learn (for basic apps) -- a widget just returns a value, like a normal variable
-
-this is also why we use @st.cache_data for loading data -- otherwise it re-downloads on every click
+streamlit cloud reads your GitHub repositories to build apps, so we link the two accounts -- click "Authorize" when GitHub asks
 
 ---
 
-## Text
+## 2. Get the starter files on GitHub
 
-```python
-st.title("My app")
-st.header("A section")
-st.markdown("Some **bold** text and a [link](https://streamlit.io)")
-st.write(df)      # write() figures out how to show almost anything
-```
-
-[Text docs](https://docs.streamlit.io/develop/api-reference/text)
+Pick one:
+* **Fork** the [starter repo](STREAMLIT_TEMPLATE) (easiest)
+* **Upload** the [workshop's starter files](COURSE_GITHUB/tree/main/module04/streamlit_starter) to a new public repo (Add file → Upload files)
+* Put them in a **folder** of any public repo you already have
 
 ---
 
-## Widgets
+## 2. Forking
 
-```python
-states = st.multiselect("States", all_states, default=["IL"])
-low, high = st.slider("Income", 15000, 60000, (20000, 40000))
-urban = st.checkbox("Urban only")
-color_by = st.radio("Color by", ["State", "Urban"])
-```
-
-Each one returns its current value → use it in pandas:
-
-```python
-filtered = df[df["State"].isin(states) & df["Income"].between(low, high)]
-```
-
-[Widget docs](https://docs.streamlit.io/develop/api-reference/widgets)
+<img src="images/streamlit_setup/fork_template.png" width="70%" style="border: 1px solid black;" alt="The starter repository's GitHub page with the 'Fork' button at the top right highlighted.">
 
 notes:
-this is the main pattern for an interactive Streamlit app: widgets → filter data with pandas → plot
+fork = your own copy of somebody else's repository
 
 ---
 
-## Altair plots in Streamlit
+## 2. Forking
 
-The **same Altair code as Module 3**, then:
+<img src="images/streamlit_setup/create_fork.png" width="60%" style="border: 1px solid black;" alt="GitHub's 'Create a new fork' page with an owner dropdown and a repository name box, and a green 'Create fork' button.">
 
-```python
-chart = alt.Chart(filtered).mark_circle().encode(
-    x="Income:Q", y="Mobility:Q", color="State:N", tooltip=["Name"]
-).interactive()
-
-st.altair_chart(chart)
-```
-
-Already have a `.json` from Module 3?
-
-```python
-st.vega_lite_chart(json.load(open("corgis_over_time.json")))
-```
+Give it a name like `webviz_streamlit` → **Create fork**
 
 notes:
-so the work from module 3 carries straight over
+screenshot shows the IS445 name -- name yours whatever you like
 
 ---
 
-## Selections back to Python
+## 3. Deploy on Streamlit Community Cloud
 
-```python
-brush = alt.selection_interval(name="brush")
-chart = alt.Chart(df).mark_circle().encode(...).add_params(brush)
+[share.streamlit.io](https://share.streamlit.io/) → **Create app**
 
-event = st.altair_chart(chart, on_select="rerun")
-event.selection["brush"]    # e.g. {"Income": [20000, 35000], "Mobility": [0.1, 0.2]}
-```
+<img src="images/streamlit_setup/create_app.png" width="70%" style="border: 1px solid black;" alt="The Streamlit Community Cloud workspace with the 'Create app' button at the top right.">
 
-Drag a box → Python gets the ranges → filter a table, compute stats, ...
+---
+
+## 3. Deploy on Streamlit Community Cloud
+
+**"Deploy a public app from GitHub"**
+
+<img src="images/streamlit_setup/deploy_github.png" width="60%" style="border: 1px solid black;" alt="Streamlit's 'What would you like to do?' page with the option 'Deploy a public app from GitHub' highlighted.">
+
+---
+
+## 3. Deploy on Streamlit Community Cloud
+
+<img src="images/streamlit_setup/deploy_mod.png" width="60%" style="border: 1px solid black;" alt="The 'Deploy an app' form: Repository jnaiman/is445_demo, Branch main, Main file path streamlit_app.py, App URL jnaiman-is445-lab8.streamlit.app with 'Domain is available', and a blue Deploy button.">
+
+Repository, branch `main`, main file `streamlit_app.py` (or `folder/streamlit_app.py`), and an App URL → **Deploy**
 
 notes:
-this is something a plain Jekyll page can't do -- the selection goes back into Python code
+first build takes a few minutes
 
 ---
 
-## Layout
+## Your app is live!
 
-```python
-st.sidebar.slider(...)                    # put widgets in a sidebar
-tab1, tab2 = st.tabs(["Plot", "Data"])    # tabs
-left, right = st.columns(2)               # side-by-side columns
-
-with tab1:
-    st.altair_chart(chart)
-```
-
-[Layout docs](https://docs.streamlit.io/develop/api-reference/layout)
-
----
-
-## Hands-on: the starter app
-
-[module04/streamlit_starter/streamlit_app.py](COURSE_GITHUB/blob/main/module04/streamlit_starter/streamlit_app.py)
-
-* sidebar widgets → pandas filter
-* an Altair scatter plot
-* a box selection sent back to Python
-* a JSON plot from Module 3
-* a data table with a download button
+<img src="images/streamlit_setup/initial_deploy.png" width="70%" style="border: 1px solid black;" alt="The deployed starter app at its .streamlit.app address, showing a title and an interactive Seattle weather chart.">
 
 notes:
-**open the file and walk through each numbered section**
-
-Lecture 4.2: getting it online
+share the URL with a neighbor!
 
 ---
 
-## Try it yourself
+## 4. Make an edit
 
-* change the title and write-up text
-* add a widget (try `st.selectbox` or `st.select_slider`)
-* plot a different column -- e.g. `Student_teacher_ratio`
-* add a second dataset: [corgis](https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/corgs_per_country_over_time_columns_2020.csv)?
+On GitHub: open `streamlit_app.py` → ✏️ → change the text in `st.title(...)` → **Commit changes** → refresh your app
 
-Ideas: [Streamlit gallery](https://streamlit.io/gallery)
+Streamlit Cloud rebuilds the app **every time the repository changes**.
 
 notes:
-remember Module 2 -- who is the app for, and what should they take away?
+this is the edit loop for the rest of the module: edit on GitHub, commit, refresh the app
+
+---
+
+## Checklist
+
+- [ ] `https://<your-app>.streamlit.app` shows the starter app
+- [ ] Your edit to `st.title(...)` shows up
+
+Want to run apps on your own computer instead? That's [Module 6](COURSE_WEBPAGE/module06/) -- optional, and not needed today.
+
+notes:
+next: how a streamlit app actually works
+
+**pause for questions / help**

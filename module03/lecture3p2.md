@@ -161,7 +161,7 @@ the ready-made JSONs are exactly what the notebook saves -- so if your notebook 
 
 ---
 
-## Track B: upload in the browser
+## Upload in the browser
 
 1. Download each starter file (open it on GitHub → ⬇️ "Download raw file")
 2. In **your** repo, click into `my_assets/json` → **Add file → Upload files** → drag in the JSONs → **Commit changes**
@@ -175,25 +175,9 @@ uploading a file with the same name replaces the old one -- so updating a plot =
 
 ---
 
-## Track A: copy, preview, push
-
-Copy the files into your local clone, then:
-
-```bash
-bundle exec jekyll serve      # check http://localhost:4008/projects/
-git add -A
-git commit -m "add Altair project"
-git push
-```
-
-notes:
-you can leave jekyll serve running while you edit -- refresh the browser to see changes (except _config.yml)
-
----
-
 ## Make it yours
 
-Open `projects/2_my_altair_plots.md` (✏️ on GitHub, or your editor):
+Open `projects/2_my_altair_plots.md` on GitHub (✏️, or press `.` for github.dev):
 
 * change the `title:` and `description:`
 * rewrite the text: what should a reader notice? (Module 2!)
@@ -231,4 +215,17 @@ Plot not showing?
 5. Still blank? Open the browser console (right click → Inspect → Console) and look for red errors
 
 notes:
-also try the browser's developer console (right click → Inspect → Console) -- a red "404" means the JSON path is wrong
+a red "404" in the console means the JSON path is wrong
+
+---
+
+## Your website is done!
+
+`https://<you>.github.io/projects/` -- a portfolio with interactive plots.
+
+Want a faster edit loop, previewing on your own computer before you upload? See [Module 6](COURSE_WEBPAGE/module06/) (optional).
+
+notes:
+this is a complete tool on its own -- if we stopped here you'd have a working interactive website
+
+next: a second tool, Streamlit apps

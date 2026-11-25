@@ -17,10 +17,13 @@ date: 2026-12-10
 
 ## What we built
 
-* `https://<you>.github.io` -- a portfolio with interactive Altair plots
-* `https://<your-app>.streamlit.app` -- an interactive app
+* `https://<you>.github.io` -- a portfolio with interactive Altair plots (Modules 1-3)
+* `https://<your-app>.streamlit.app` -- an interactive app (Module 4)
 
 Let's connect them!
+
+notes:
+didn't get to the app today? Module 4 is self-contained -- you can do it on your own later with just your GitHub account, then come back to these slides
 
 ---
 
@@ -111,6 +114,20 @@ pros/cons as always: programming tools give you more control and are free; no-co
 
 notes:
 never put passwords, private data or API keys in a public repo
+
+---
+
+## Working on your own computer
+
+Everything today was in the browser. For a faster edit loop -- previewing your site and app **before** you upload -- see [Module 6: Installing Everything Locally](COURSE_WEBPAGE/module06/):
+
+* Python + JupyterLab (instead of Colab)
+* git (instead of uploading files)
+* Ruby + Jekyll → `bundle exec jekyll serve`
+* `streamlit run streamlit_app.py`
+
+notes:
+optional! your site and app live on GitHub either way, so you can pick up exactly where you left off
 
 ---
 

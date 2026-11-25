@@ -17,31 +17,32 @@ examples:
   - filename: streamlit_template
     type: iodide
     title: Starter repository to fork
-    description: The repository forked in Module 1 -- the simplest possible app.
+    description: The repository we fork in Lecture 4.1 -- the simplest possible app.
     link: https://github.com/jnaiman/is445_streamlit_demo
   - filename: streamlit_cloud
     type: iodide
     title: Streamlit Community Cloud
-    description: Deploy and manage your apps.
+    description: Sign in with GitHub, then deploy and manage your apps.
     link: https://share.streamlit.io/
 data:
   - filename: mobility.csv
     type: dataLink
     title: The Mobility dataset
-    description: The dataset the starter app explores (see Module 3 for details).
+    description: The dataset the starter app explores. For 741 US regions, how likely a child from a low-income family is to move up in income as an adult, plus population, income, schools and more (<a href="http://www.stat.cmu.edu/~cshalizi/uADA/15/hw/01/hw-01.pdf">more info</a>).
     link: https://raw.githubusercontent.com/UIUC-iSchool-DataViz/is445_data/main/mobility.csv
 ---
 
 # Streamlit Apps on Streamlit Community Cloud
 
-In this module we turn a Python script into an interactive web app with [Streamlit](https://streamlit.io/), reuse our Altair plots from Module 3 in it, and host it for free on [Streamlit Community Cloud](https://share.streamlit.io/).
+In this module we turn a Python script into an interactive web app with [Streamlit](https://streamlit.io/), put Altair plots in it, and host it for free on [Streamlit Community Cloud](https://share.streamlit.io/).
 
-An app is just **two files** in a **public GitHub repository** (or a folder in one): `streamlit_app.py` and `requirements.txt`. Two ways to work on it:
+This module is **self-contained**: all you need is your GitHub account from Module 1. We make the Streamlit account and deploy a first app together in [Lecture 4.1](lecture4p1.html).
 
-* **Browser only:** upload/edit the files on github.com (or press `.` on your repository page for the [github.dev](https://github.dev) editor). Streamlit Cloud rebuilds the app after every commit.
-* **Locally:** `streamlit run streamlit_app.py` to preview on your computer, then `git push`.
+An app is just **two files** in a **public GitHub repository** (or a folder in one): `streamlit_app.py` and `requirements.txt`. We upload and edit them on github.com (or press `.` on your repository page for the [github.dev](https://github.dev) editor), and Streamlit Cloud rebuilds the app after every commit.
 
-The [starter app](https://github.com/{{site.githuburlbase}}{{site.baseurl}}/tree/{{site.branch}}/module04/streamlit_starter) has examples of everything in [Lecture 4.1](lecture4p1.html); [Lecture 4.2](lecture4p2.html) covers deploying and fixing problems.
+The [starter app](https://github.com/{{site.githuburlbase}}{{site.baseurl}}/tree/{{site.branch}}/module04/streamlit_starter) has examples of everything in [Lecture 4.2](lecture4p2.html); [Lecture 4.3](lecture4p3.html) covers putting it online and fixing problems.
+
+Prefer to run your app on your own computer while you work on it? See [Module 6]({{site.baseurl}}/module06/) (optional).
 
 ### Optional Reading and Materials
 

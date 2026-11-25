@@ -67,7 +67,7 @@ notes:
 **highlight:**
 1. lecture slides
 2. resources/data
-3. notebooks (view on the site, download, or open in Colab) and starter files (Modules 3 & 4)
+3. notebooks (view on the site, or open in Colab) and starter files (Modules 3 & 4)
 
 **pause for questions**
 
@@ -153,20 +153,25 @@ also do some science digitization, i.e. trying to turn scans of old scientific f
 
 | Module | What we'll do |
 |---|---|
-| 1 | Set up: install tools (or go browser-only), make your github.io site and Streamlit account |
+| 1 | Set up: accounts, Google Colab, and your github.io website |
 | 2 | Data viz basics: what makes a good (or bad) viz |
 | 3 | Interactive plots with **Altair** → on your **Jekyll** website |
 | 4 | Interactive **Streamlit** apps → on **Streamlit Community Cloud** |
 | 5 | Putting it together & where to go from here |
+| 6 | *(Optional, on your own)* installing everything on your computer |
 
 notes:
 a lot of this comes from the IS445 Data Visualization course (weeks on Altair, Jekyll and Streamlit) -- squished into one workshop!
 
+modules 1-3 are one complete "tool" (a website with interactive plots), module 4 is a second complete tool (an app) -- so if we run short on time, you still leave with a finished website
+
+everything today is in the browser; module 6 is there for later if you want to work on your own computer
+
 ---
 
-## Double check: installs going ok?
+## Double check: setup going ok?
 
 notes:
-hopefully folks got Lecture 1.0 done (or started) -- quick check in before we move to setting up the website and app
+hopefully folks got Lecture 1.0 done (or started) -- quick check in: GitHub account? Colab test notebook ran?
 
-anybody stuck on Ruby/Jekyll -- remember Track B (browser only) works for everything today
+next up: putting the website template on your github.io site

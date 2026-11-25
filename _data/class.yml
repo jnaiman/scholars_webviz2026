@@ -71,11 +71,11 @@ urls:
   -
     id: cv_template
     name: Online CV (Jekyll) Template
-    # the Jekyll template participants put on their github.io site (Modules 1 & 3)
+    # the Jekyll template participants put on their github.io site (Modules 1 & 3; local version in Module 6)
     url: https://github.com/jnaiman/online_cv_public_fa2026
   -
     id: streamlit_template
     name: Streamlit Starter Repo
-    # repo participants fork for their first Streamlit app (Modules 1 & 4).
+    # repo participants fork for their first Streamlit app (Lecture 4.1).
     # TODO: swap for a workshop-specific repo if you make one (see update_table.md)
     url: https://github.com/jnaiman/is445_streamlit_demo

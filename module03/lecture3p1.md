@@ -19,16 +19,17 @@ in Module 2 we talked about how to design a good viz -- now let's build some tha
 
 ---
 
-## The plan for Modules 3 & 4
+## The plan for Module 3
 
 1. Make interactive plots in **Python** with **Altair** (this lecture)
 2. Put them on your **Jekyll** website as `.json` files (Lecture 3.2)
-3. Put them in a **Streamlit** app (Module 4)
 
-The same Altair code works for both!
+Later, in Module 4, the same Altair code goes into a **Streamlit** app.
 
 notes:
 the nice thing about altair is that it's one way of making plots that ends up in both of our web "homes"
+
+by the end of this module your website is finished -- module 4 is a separate, second tool
 
 ---
 
@@ -231,12 +232,11 @@ container plots can look small in the notebook -- they'll fill the page on your 
 
 ## Hands-on: the Module 3 notebook
 
-[altair_to_json.ipynb](COURSE_WEBPAGE/nbv.html?notebook_name=COURSE_WEBPAGE/module03/altair_to_json.ipynb)
-
-* **Track A:** download it, `conda activate webviz`, `jupyter lab`
-* **Track B:** [open it in Colab](COURSE_COLAB/module03/altair_to_json.ipynb)
+[Open altair_to_json.ipynb in Colab](COURSE_COLAB/module03/altair_to_json.ipynb)
 
 We'll make 4 plots and save 4 JSON files.
+
+The last cells download them all as one zip file.
 
 notes:
 **work through the notebook together**

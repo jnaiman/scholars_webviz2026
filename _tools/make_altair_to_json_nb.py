@@ -19,8 +19,8 @@ In this notebook we'll:
 3. get those files ready to **upload to your Jekyll site** (Lecture 3.2).
 
 **How to run it**
-* **Track A (local):** `conda activate webviz`, then `jupyter lab`, and open this notebook.
-* **Track B (browser only):** [open this notebook in Google Colab](https://colab.research.google.com/github/{REPO}/blob/main/module03/altair_to_json.ipynb).
+* **In the workshop:** [open this notebook in Google Colab](https://colab.research.google.com/github/{REPO}/blob/main/module03/altair_to_json.ipynb).
+* **On your own computer (optional, Module 6):** `conda activate webviz`, then `jupyter lab`, and open this notebook.
 
 Run the cells in order (`Shift+Enter`).  Every plot is interactive once it shows up -- try hovering, clicking and dragging!
 
@@ -205,10 +205,11 @@ md("""## 6. Get your JSON files
 Here's everything we saved:"""),
 code("""for f in sorted(os.listdir(OUT)):
     print(f"{f:28s} {os.path.getsize(os.path.join(OUT, f)) / 1024:7.1f} KB")"""),
-md("""* **Track A (local):** the files are in the `my_json_files` folder next to this notebook.  Copy them into
-  `my_assets/json/` in your github.io folder.
-* **Track B (Colab):** run the next cell to download them all as one zip file (or use the folder icon in the
-  left sidebar and right click → Download on each file)."""),
+md("""* **Colab:** run the next cell to download them all as one zip file (or use the folder icon in the
+  left sidebar and right click → Download on each file).  Unzip it, then upload the `.json` files to
+  `my_assets/json/` in your github.io repository.
+* **On your own computer (Module 6):** the files are in the `my_json_files` folder next to this notebook.
+  Copy them into `my_assets/json/` in your github.io folder."""),
 code("""import sys
 if "google.colab" in sys.modules:
     import shutil

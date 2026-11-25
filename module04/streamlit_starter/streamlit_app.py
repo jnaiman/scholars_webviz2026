@@ -1,13 +1,13 @@
 # =============================================================================
 #  Streamlit starter app -- Bolashak Scholars Web Viz Workshop, Module 4
 #
-#  Run it on your computer (Track A):
+#  Run it on your computer (optional -- see Module 6 of the workshop):
 #      conda activate webviz
 #      streamlit run streamlit_app.py
 #  then open http://localhost:8501.  Edit this file, save, and click "Rerun"
 #  (or "Always rerun") in the app's top-right corner.
 #
-#  Put it online (both tracks): this file + requirements.txt (+ the .json file)
+#  Put it online: this file + requirements.txt (+ the .json file)
 #  in a PUBLIC GitHub repository, then "Create app" on share.streamlit.io.
 #  Every commit to the repository updates the live app.
 #
